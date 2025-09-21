@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".ResultsActivity">
+
+    <!-- Fondo superior -->
+    <View
+        android:id="@+id/view_header"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="#E97D9A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="¡Proceso Completado! 🎉"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="@+id/view_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view_header" />
+
+    <!-- Contenedor principal -->
+    <View
+        android:id="@+id/view_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_header" />
+
+    <!-- Historial en ScrollView -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNewGame"
+        app:layout_constraintEnd_toEndOf="@+id/view_container"
+        app:layout_constraintStart_toStartOf="@+id/view_container"
+        app:layout_constraintTop_toTopOf="@+id/view_container">
+
+        <TextView
+            android:id="@+id/tvSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="monospace"
+            android:gravity="start"
+            android:lineSpacingExtra="4dp"
+            android:text="Historial de interacción"
+            android:textColor="#CF4566"
+            android:textSize="14sp" />
+    </ScrollView>
+
+    <!-- Botón -->
+    <Button
+        android:id="@+id/btnNewGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#D6DE6A80"
+        android:drawableStart="@android:drawable/ic_menu_add"
+        android:drawablePadding="8dp"
+        android:text="Volver a Jugar"
+        app:layout_constraintBottom_toBottomOf="@+id/view_container"
+        app:layout_constraintEnd_toEndOf="@+id/view_container"
+        app:layout_constraintStart_toStartOf="@+id/view_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
